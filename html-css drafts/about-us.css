@@ -11,3 +11,64 @@ body {
   margin: 0 auto;
   padding: 2rem;
 }
+
+.header-cta {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background: lightgray;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: black;
+  border-radius: 999px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.committee-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.committee-text {
+  flex: 1;
+}
+
+.committee-image {
+  background: lightgray;
+  width: 300px;
+  height: 200px;
+  flex-shrink: 0;
+}
+
+.committee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.committee-members h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.member {
+  text-align: center;
+}
+
+.photo {
+  background: lightgray;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 0.5rem;
+}
