@@ -10,7 +10,7 @@
 
   --hero-h: 150vh;
   --mid-h: 80vh;
-  --reef-h: 260vh;
+  --reef-h: 250vh;
 
   --theme-offset: 20vh;
   /* how far down the theme block sits */
@@ -1387,7 +1387,6 @@ section.reef .layer {
   flex: 0 0 360px;
   background: #ffffff;
   border-radius: 18px;
-  padding: 10px 15px;
   display: flex;
   align-items: center;
   justify-content: center;
