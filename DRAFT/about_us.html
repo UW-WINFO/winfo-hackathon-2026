@@ -11,9 +11,9 @@
     <!-- navigation bar-->
     <nav class="nav" aria-hidden="false">
       <div class="nav-wrapper">
-        <a href="#home" class="nav-item">Home</a>
-        <a href="#schedule" class="nav-item">Schedule</a>
-        <a href="#faq" class="nav-item">FAQ</a>
+        <a href="landing.html#home" class="nav-item">Home</a>
+        <a href="landing.html#schedule" class="nav-item">Schedule</a>
+        <a href="landing.html#faq" class="nav-item">FAQ</a>
         <a href="about_us.html" class="nav-item">About</a>
       </div>
     </nav>
@@ -376,5 +376,20 @@
         <div class="caption">©2025 Women in Informatics</div>
       </div>
     </footer>
+    <script>
+      // Highlight "About" nav item when on about_us.html page
+      (() => {
+        const navLinks = document.querySelectorAll(".nav a.nav-item");
+        navLinks.forEach((link) => {
+          if (
+            link.getAttribute("href") === "about_us.html" ||
+            link.textContent.trim() === "About"
+          ) {
+            link.classList.add("active");
+            link.setAttribute("aria-current", "page");
+          }
+        });
+      })();
+    </script>
   </body>
 </html>

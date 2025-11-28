@@ -194,10 +194,56 @@ p {
   }
 
   .nav-item {
-    flex: 0 1 8%;
-    text-align: center;
-    
-  }
+  flex: 0 1 8%;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: font-weight 0.2s ease;
+}
+
+/* Underline indicator */
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%) scaleX(0);
+  width: 80%;
+  height: 3px;
+  background: #0b3039;
+  border-radius: 3px;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+/* Active state */
+.nav-item.active,
+.nav-item[aria-current="true"] {
+  font-weight: 700;
+}
+
+.nav-item.active::after,
+.nav-item[aria-current="true"]::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Hover state */
+.nav-item:hover {
+  font-weight: 600;
+}
+
+.nav-item:hover::after {
+  transform: translateX(-50%) scaleX(0.5);
+  opacity: 0.5;
+}
+
+.nav-item.active:hover::after,
+.nav-item[aria-current="true"]:hover::after {
+  transform: translateX(-50%) scaleX(1);
+  opacity: 1;
+}
 
 /* ---------- Hero (sky + surface) ---------- */
 header.hero {
