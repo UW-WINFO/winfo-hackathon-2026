@@ -360,11 +360,10 @@ header.hero .layer {
   width: 35vw;
   /* big, responsive size */
   min-width: 160px;
-  /* don’t let it shrink too tiny */
-  opacity: .35;
-  /* make it subtle */
-  mix-blend-mode: overlay;
   /* blend the rainbow light with background colors */
+  filter: grayscale(90%) brightness(400%) contrast(100%) saturate(100%) opacity(100%);
+  opacity: .5;
+  mix-blend-mode: plus-lighter;
 }
 
 /* cat on buoy */
@@ -456,8 +455,11 @@ section.midwater .layer {
   height: var(--rays-h);
   /* tall cone; image scales by height */
   right: 5%;
-  opacity: 0.75;
-  mix-blend-mode: multiply lighter;
+
+  /* recolor golden rays to light gray */
+  filter: grayscale(90%) brightness(400%) contrast(100%) saturate(100%) opacity(100%);
+  opacity: 0.9;
+  mix-blend-mode: plus-lighter;
 }
 
 .intro .shadow-soft {
