@@ -1203,7 +1203,6 @@
           const now = Date.now();
           let diff = eventDate - now;
 
-          // Get all the <strong> elements within .unit divs
           const units = countdownEl.querySelectorAll(".unit strong");
           
           if (units.length !== 4) {
@@ -1225,7 +1224,6 @@
           const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
           // Update the countdown values
-          // Order: Days, Hours, Minutes, Seconds (matching HTML structure)
           units[0].textContent = days.toString().padStart(2, "0");
           units[1].textContent = hours.toString().padStart(2, "0");
           units[2].textContent = minutes.toString().padStart(2, "0");
@@ -1242,7 +1240,7 @@
         // Update every second
         const countdownInterval = setInterval(updateCountdown, 1000);
 
-        // Clean up interval when page unloads (optional, but good practice)
+        // Clean up interval when page unloads
         window.addEventListener("beforeunload", () => {
           if (countdownInterval) {
             clearInterval(countdownInterval);
