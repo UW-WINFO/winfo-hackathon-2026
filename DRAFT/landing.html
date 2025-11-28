@@ -1,107 +1,989 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>WINFO Hackathon — Depths of Discovery</title>
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="https://use.typekit.net/xxr8qwd.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WINFO Hackathon 2025</title>
+    <link rel="stylesheet" href="styles1.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/xxr8qwd.css" />
+  </head>
 
-
-  <!-- ================= HERO ================= -->
-  <header class="hero wrap" aria-label="Intro">
-    <!-- clouds -->
-    <div class="layer clouds" aria-hidden="true">
-      <img class="sprite" src="assets/sky/clouds.png" alt="" loading="eager" />
-    </div>
-
-    <!-- birds -->
-    <div class="layer birds" aria-hidden="true">
-      <img class="sprite left"  src="assets/sky/birds-left.png"  alt="" loading="eager" />
-      <img class="sprite right" src="assets/sky/birds-right.png" alt="" loading="eager" />
-    </div>
-
-    <!-- water surface + rainbow -->
-    <div class="layer surface" aria-hidden="true">
-      <img class="sprite water"   src="assets/hero/water-surface.png" alt="" loading="eager" />
-      <img class="sprite rainbow" src="assets/sky/lil-rainbow.png"   alt="" loading="lazy" />
-    </div>
-
-    <!-- froth -->
-    <div class="layer froth" aria-hidden="true">
-      <img class="sprite water"   src="assets/hero/froth.png" alt="" loading="eager" />
-    </div>
-
-    <!-- cat on buoy -->
-    <div class="layer hero-figure" aria-hidden="true">
-      <img class="sprite cat" src="assets/hero/cat-on-buoy.png" alt="" loading="eager" />
-    </div>
-
-    <!-- intro copy -->
-    <div class="intro">
-      <h1 class="shadow-soft">Ready to dive in?</h1>
-      <p>Women in Informatics is excited to invite you to our 14th Annual Hackathon, <em>“<strong>Depths of Discovery, Currents of Creation</strong>”</em> ! Join us for another wonderful day of developing technology solutions for social good and celebrating equity and inclusion in the technology field ⋆｡°✩</p>
-    </div>
-  </header>
-
-  <!-- ================= MIDWATER ================= -->
-  <section class="midwater wrap" aria-label="Theme">
-    <!-- rays + mola -->
-    <div class="layer rays" aria-hidden="true">
-      <!-- filename has parentheses; quoting keeps the URL valid -->
-      <img class="sprite beams" src="assets/midwater/sunlight2.png" alt="" loading="lazy" />
-    </div>
-    <div class="layer mola" aria-hidden="true">
-      <img class="sprite fish" src="assets/midwater/mola-mola.png" alt="" loading="lazy" />
-    </div>
-
-    <!-- theme content -->
-    <div class="theme-content">
-      <div class="content">
-        <h1>Hackathon Theme</h1>
-        <p>Last year, our theme, “Breaking Grounds, Discovering Solutions” focused on redefining technology we already understand. This year, we’re diving into the unknown. Inspired by a vast ocean of possibility and the ever-changing tides of technology, we believe that ingenuity emerges through the pursuit of novel ideas, charting the currents that shape future innovation.</p>
-        <p>Our theme celebrates exploration and creativity as powerful forces for shaping the future. Just as <strong>discovery unveils new depths, creation sets ideas in motion</strong>, empowering producers of technology to chart bold new paths of progress.</p><br>
-        
-        <div class="video-wrap" aria-label="Highlight reel">
-          <!-- Replace with your real video embed; using a placeholder poster for now -->
-          <video src="" poster="assets/video/video_poster.png" controls playsinline></video>
-        </div>
-        <div class="caption">Highlight reel from WINFO’s 2024 Hackathon</div>
+  <body>
+    <!-- ================= HERO ================= -->
+    <header class="hero wrap" aria-label="Intro">
+      <!-- clouds -->
+      <div class="layer clouds" aria-hidden="true">
+        <img
+          class="sprite"
+          src="assets/sky/clouds.png"
+          alt=""
+          loading="eager"
+        />
       </div>
-    </div>
-  </section>
 
-  <!-- ================= REEF & SEAFLOOR ================= -->
-  <section class="reef wrap" aria-label="Underwater Reef">
-    <!-- school + decorative fish -->
-    <div class="layer school" aria-hidden="true">
-      <img class="sprite" src="assets/reef/school-of-fish.png" alt="" loading="lazy" />
-    </div>
-    <div class="layer decor-fish" aria-hidden="true">
-      <img class="sprite blue"   src="assets/reef/blue-tang.png"   alt="" loading="lazy" />
-      <img class="sprite clown"  src="assets/reef/clownfish.png"   alt="" loading="lazy" />
-      <img class="sprite trigger" src="assets/reef/triggerfish.png" alt="" loading="lazy" />
-    </div>
+      <!-- birds -->
+      <div class="layer birds" aria-hidden="true">
+        <img
+          class="sprite left"
+          src="assets/sky/birds-left.png"
+          alt=""
+          loading="eager"
+        />
+        <img
+          class="sprite right"
+          src="assets/sky/birds-right.png"
+          alt=""
+          loading="eager"
+        />
+      </div>
 
-    <!-- reefs -->
-    <div class="layer reefs" aria-hidden="true">
-      <img class="sprite left"  src="assets/reef/reef-left.png"  alt="" loading="lazy" />
-      <img class="sprite right" src="assets/reef/reef-right.png" alt="" loading="lazy" />
-    </div>
+      <!-- water surface + rainbow -->
+      <div class="layer surface" aria-hidden="true">
+        <img
+          class="sprite water"
+          src="assets/hero/water-surface.png"
+          alt=""
+          loading="eager"
+        />
+        <img
+          class="sprite rainbow"
+          src="assets/sky/lil-rainbow.png"
+          alt=""
+          loading="lazy"
+        />
+      </div>
 
-    <!-- rocks shelf + shark -->
-    <div class="layer shark" aria-hidden="true">
-      <img class="sprite leo" src="assets/seafloor/leopard-shark.png" alt="" loading="lazy" />
-    </div>
-    <div class="layer rocks" aria-hidden="true">
-      <img class="sprite shelf" src="assets/seafloor/bg-rocks-long.png" alt="" loading="lazy" />
-    </div>
-    <div class="layer cutoff" aria-hidden="true">
-      <img class="sprite shelf" src="assets/seafloor/cutoff.png" alt="" loading="lazy" />
-    </div>
-  </section>
+      <!-- froth -->
+      <div class="layer froth" aria-hidden="true">
+        <img
+          class="sprite water"
+          src="assets/hero/froth.png"
+          alt=""
+          loading="eager"
+        />
+      </div>
 
-</body>
+      <!-- cat on buoy -->
+      <div class="layer hero-figure" aria-hidden="true">
+        <img
+          class="sprite cat"
+          src="assets/hero/cat-on-buoy.png"
+          alt=""
+          loading="eager"
+        />
+      </div>
+
+      <!-- intro -->
+      <div class="intro">
+        <h1>Women of Informatics’ 14th Annual Hackathon</h1>
+        <div class="meta">
+          <img class="date-icon" src="assets/hero/date-icon.png" alt="" />
+          <span><strong>January 24–25, 2026</strong></span>
+          <img
+            class="location-icon"
+            src="assets/hero/location-icon.png"
+            alt=""
+          />
+          <span><strong>UNIVERSITY OF WASHINGTON HUB</strong></span>
+        </div>
+        <a href="#" class="btn-primary">REGISTER NOW</a>
+      </div>
+    </header>
+
+    <!-- ================= MIDWATER ================= -->
+    <section class="midwater wrap" aria-label="Theme">
+      <div class="dive-in">
+        <h1>Ready to dive in?</h1>
+        <p>
+          Women in Informatics is excited to invite you to our 14th Annual
+          Hackathon,
+          <em>“<strong>Depths of Discovery, Currents of Creation</strong>”</em>
+          ! Join us for another wonderful day of developing technology solutions
+          for social good and celebrating equity and inclusion in the technology
+          field ⋆｡°✩
+        </p>
+      </div>
+
+      <!-- rays + mola -->
+      <div class="layer rays" aria-hidden="true">
+        <!-- filename has parentheses; quoting keeps the URL valid -->
+        <img
+          class="sprite beams"
+          src="assets/midwater/sunlight.png"
+          alt=""
+          loading="lazy"
+        />
+      </div>
+      <div class="layer mola" aria-hidden="true">
+        <img
+          class="sprite fish"
+          src="assets/midwater/mola-mola.png"
+          alt=""
+          loading="lazy"
+        />
+      </div>
+
+      <!-- theme content -->
+      <div class="theme-content">
+        <div class="content">
+          <h1>Hackathon Theme</h1>
+          <p>
+            Last year, our theme, “Breaking Grounds, Discovering Solutions”
+            focused on redefining technology we already understand. This year,
+            we’re diving into the unknown. Inspired by a vast ocean of
+            possibility and the ever-changing tides of technology, we believe
+            that ingenuity emerges through the pursuit of novel ideas, charting
+            the currents that shape future innovation.
+          </p>
+          <p>
+            Our theme celebrates exploration and creativity as powerful forces
+            for shaping the future. Just as
+            <strong
+              >discovery unveils new depths, creation sets ideas in
+              motion</strong
+            >, empowering producers of technology to chart bold new paths of
+            progress.
+          </p>
+          <br />
+
+          <div class="video-wrap" aria-label="Highlight reel">
+            <!-- Replace with your real video embed; using a placeholder poster for now -->
+            <video
+              src=""
+              poster="assets/video/video_poster.png"
+              controls
+              playsinline
+            ></video>
+          </div>
+          <div class="caption">Highlight reel from WINFO’s 2024 Hackathon</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= REEF & SEAFLOOR ================= -->
+    <section class="reef wrap" aria-label="Underwater Reef">
+      <!-- school + decorative fish -->
+      <div class="layer school" aria-hidden="true">
+        <img
+          class="sprite"
+          src="assets/reef/school-of-fish.png"
+          alt=""
+          loading="lazy"
+        />
+      </div>
+      <div class="layer decor-fish" aria-hidden="true">
+        <img
+          class="sprite blue"
+          src="assets/reef/blue-tang.png"
+          alt=""
+          loading="lazy"
+        />
+        <img
+          class="sprite clown"
+          src="assets/reef/clownfish.png"
+          alt=""
+          loading="lazy"
+        />
+        <img
+          class="sprite trigger"
+          src="assets/reef/triggerfish.png"
+          alt=""
+          loading="lazy"
+        />
+      </div>
+
+      <!-- reefs -->
+      <div class="layer reefs" aria-hidden="true">
+        <img
+          class="sprite left"
+          src="assets/reef/reef-left.png"
+          alt=""
+          loading="lazy"
+        />
+        <img
+          class="sprite right"
+          src="assets/reef/reef-right.png"
+          alt=""
+          loading="lazy"
+        />
+      </div>
+
+      <!-- rocks shelf + shark -->
+      <div class="layer shark" aria-hidden="true">
+        <img
+          class="sprite leo"
+          src="assets/seafloor/leopard-shark.png"
+          alt=""
+          loading="lazy"
+        />
+      </div>
+      <div class="layer rocks" aria-hidden="true">
+        <img
+          class="sprite shelf"
+          src="assets/seafloor/bg-rocks-long.png"
+          alt=""
+          loading="lazy"
+        />
+      </div>
+      <div class="layer cutoff" aria-hidden="true">
+        <img
+          class="sprite shelf"
+          src="assets/seafloor/cutoff.png"
+          alt=""
+          loading="lazy"
+        />
+      </div>
+    </section>
+
+    <!-- ================= TRACKS ================= -->
+    <section class="tracks" aria-label="Prize Tracks">
+      <div class="content">
+        <h1 class="section-title">Prize Tracks</h1>
+
+        <ol class="tracks-list">
+          <li class="track">
+            <div class="track-header">
+              <span class="num">1.</span>
+              <h2>Best Product</h2>
+            </div>
+            <div class="track-content">
+              <p>
+                This team brings it all: functionality, appeal, innovation, a
+                working demo, and most of all, the potential to scale. Their
+                hack is not only creative in thinking and delivers in its demo,
+                but possesses the most promise to impart real-world impact.
+                "Best Product" projects are ones that comprehensively understand
+                their user by producing a solution that has a strong promise for
+                real implementation.
+              </p>
+              <div class="focus">
+                <div class="label">THIS TRACK FOCUSES ON:</div>
+                <ul>
+                  <li>Venture potential</li>
+                  <li>Solution originality</li>
+                  <li>Scalability &amp; marketability</li>
+                </ul>
+              </div>
+            </div>
+            <img
+              class="decor decor-starfish"
+              src="assets/tracks/starfish.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </li>
+
+          <li class="track">
+            <div class="track-header">
+              <span class="num">2.</span>
+              <h2>Best Impact</h2>
+            </div>
+            <div class="track-content">
+              <p>
+                This team has built a product that has the greatest potential to
+                influence lives and bring about a positive change to a
+                community. Their hack is thoroughly backed by research &amp;
+                statistics, demonstrating an elevated knowledge of their problem
+                statement. A "Best Impact" solution addresses a real-world
+                societal challenge, often at the local or regional level, and
+                shows clear promise for measurable impact on its intended
+                community.
+              </p>
+              <div class="focus">
+                <div class="label">THIS TRACK FOCUSES ON:</div>
+                <ul>
+                  <li>Real-world impact</li>
+                  <li>Public value</li>
+                  <li>Accessibility &amp; inclusion</li>
+                </ul>
+              </div>
+            </div>
+            <img
+              class="decor decor-urchin"
+              src="assets/tracks/mussels.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </li>
+
+          <li class="track">
+            <div class="track-header">
+              <span class="num">3.</span>
+              <h2>Best Design</h2>
+            </div>
+            <div class="track-content">
+              <p>
+                This team crafts a compelling narrative of its own, complemented
+                by breathtaking visuals and intuitive user experiences. These
+                hackers know their sans from their san-serifs, providing their
+                intended audience with a clean, intuitive, and delightful user
+                experience. "Best Design" projects designs with the user in mind
+                and presents a prototype that feels natural and effortless to
+                use.
+              </p>
+              <div class="focus">
+                <div class="label">THIS TRACK FOCUSES ON:</div>
+                <ul>
+                  <li>Intentional design</li>
+                  <li>Visual creativity</li>
+                  <li>User Interface/User Experience</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <li class="track">
+            <img
+              class="decor decor-crab"
+              src="assets/tracks/crab.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <div class="track-header">
+              <span class="num">4.</span>
+              <h2>Best Implementation</h2>
+            </div>
+            <div class="track-content">
+              <p>
+                This team excels in technical execution, showing exceptional
+                software development and coding skills. This hack showcases
+                clean, effective, and innovative code—whether through advanced
+                software engineering, creative problem-solving, or impactful use
+                of AI and emerging technologies. "Best Implementation" projects
+                can balance their technical skillset with creativity in their
+                final product.
+              </p>
+              <div class="focus">
+                <div class="label">THIS TRACK FOCUSES ON:</div>
+                <ul>
+                  <li>Code readability</li>
+                  <li>Stability &amp; functionality</li>
+                  <li>Integrated components</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= MIDNIGHT ZONE (Schedules + FAQ) ================= -->
+    <section class="midnight zone" aria-label="Schedules" id="midnight">
+      <div class="pin">
+        <!-- Background art (stays pinned with the section) -->
+        <div class="midnight-art" aria-hidden="true">
+          <img class="cave" src="assets/midnight-zone/cave.png" alt="" />
+          <img
+            class="jellies"
+            src="assets/midnight-zone/jellyfish.png"
+            alt=""
+          />
+          <img class="tuna" src="assets/midnight-zone/tuna.png" alt="" />
+        </div>
+
+        <!-- Scrolling text panel (scrolls internally while pinned) -->
+        <div class="schedule-panel">
+          <div class="content schedules" id="schedulesInner">
+            <h1 class="section-title">Schedules</h1>
+
+            <div class="schedule-columns">
+              <article class="schedule">
+                <header>
+                  <h2>Hackathon Day</h2>
+                  <div class="meta">
+                    <img
+                      class="date-icon"
+                      src="assets/midnight-zone/date-icon.png"
+                      alt=""
+                    />
+                    <span class="meta-item">January 24, 2026</span>
+                    <img
+                      class="location-icon"
+                      src="assets/midnight-zone/location-icon.png"
+                      alt=""
+                    />
+                    <span class="meta-item"
+                      >Husky Union Building North Ballroom</span
+                    >
+                  </div>
+                </header>
+                <ul class="timeline">
+                  <li>
+                    <span class="time">8:00 AM</span
+                    ><span class="evt">Doors open for sponsors</span>
+                  </li>
+                  <li>
+                    <span class="time">9:00 AM</span
+                    ><span class="evt">Doors open for participants</span>
+                  </li>
+                  <li>
+                    <span class="time">9:30 AM</span
+                    ><span class="evt">Opening ceremony</span>
+                  </li>
+                  <li>
+                    <span class="time">10:30 AM</span
+                    ><span class="evt">Hackathon begins</span>
+                  </li>
+                  <li>
+                    <span class="time">11:30 AM</span
+                    ><span class="evt">Mentor check-ins</span>
+                  </li>
+                  <li>
+                    <span class="time">12:45 PM</span
+                    ><span class="evt">First Mentoring Round Ends</span>
+                  </li>
+                  <li>
+                    <span class="time">1:00 PM</span
+                    ><span class="evt">Lunch</span>
+                  </li>
+                  <li>
+                    <span class="time">2:00 PM</span
+                    ><span class="evt">Second Mentoring Round Starts</span>
+                  </li>
+                  <li>
+                    <span class="time">3:40 PM</span
+                    ><span class="evt">Third Mentoring Round Starts</span>
+                  </li>
+                  <li>
+                    <span class="time">5:00 PM</span
+                    ><span class="evt">Dinner</span>
+                  </li>
+                  <li>
+                    <span class="time">6:00 PM</span
+                    ><span class="evt">Fourth Mentoring Round Starts</span>
+                  </li>
+                  <li>
+                    <span class="time">7:00 PM</span
+                    ><span class="evt">Project Submission Closes</span>
+                  </li>
+                  <li>
+                    <span class="time">8:00 PM</span
+                    ><span class="evt">Finalists Announced</span>
+                  </li>
+                  <li>
+                    <span class="time">8:15 PM</span
+                    ><span class="evt">Closing</span>
+                  </li>
+                </ul>
+              </article>
+
+              <article class="schedule">
+                <header>
+                  <h2>Judging Day</h2>
+                  <div class="meta">
+                    <img
+                      class="date-icon"
+                      src="assets/midnight-zone/date-icon.png"
+                      alt=""
+                    />
+                    <span class="meta-item">January 25, 2026</span>
+                    <img
+                      class="location-icon"
+                      src="assets/midnight-zone/location-icon.png"
+                      alt=""
+                    />
+                    <span class="meta-item">Maple Great Room</span>
+                  </div>
+                </header>
+                <ul class="timeline">
+                  <li>
+                    <span class="time">12:00 PM</span
+                    ><span class="evt">Finalists / Group Sign-In</span>
+                  </li>
+                  <li>
+                    <span class="time">12:30 PM</span
+                    ><span class="evt">Welcome Speech</span>
+                  </li>
+                  <li>
+                    <span class="time">01:00 PM</span
+                    ><span class="evt">Track 1 Group Presentations</span>
+                  </li>
+                  <li>
+                    <span class="time">01:30 PM</span
+                    ><span class="evt"
+                      >Track 1 Judge Deliberation & Track 2 Group
+                      Presentations</span
+                    >
+                  </li>
+                  <li>
+                    <span class="time">02:00 PM</span
+                    ><span class="evt"
+                      >Track 2 Judge Deliberation & Track 3 Group
+                      Presentations</span
+                    >
+                  </li>
+                  <li>
+                    <span class="time">02:30 PM</span
+                    ><span class="evt"
+                      >Track 3 Judge Deliberation & Track 4 Group
+                      Presentations</span
+                    >
+                  </li>
+                  <li>
+                    <span class="time">03:00 PM</span
+                    ><span class="evt">Track 4 Judge Deliberation</span>
+                  </li>
+                  <li>
+                    <span class="time">04:00 PM</span
+                    ><span class="evt"
+                      >Closing Statements &amp; Track Winners</span
+                    >
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+        <!-- /schedule-panel -->
+      </div>
+      <!-- /pin -->
+
+      <!-- ================= FAQ (inside Midnight Zone) ================= -->
+      <section class="faq" aria-label="Frequently Asked Questions">
+        <div class="content">
+          <h1 class="section-title">Frequently Asked Questions</h1>
+
+          <div class="faq-grid">
+            <details>
+              <summary>Is this hackathon right for me?</summary>
+              <p>
+                This is a beginner-friendly, high-level hackathon built to
+                welcome participants from all backgrounds with no required
+                coding experience. If you’re interested in tech, design,
+                problem-solving, or simply want to try something new, this is a
+                great space for you to explore your ideas and grow your skills.
+              </p>
+            </details>
+
+            <details>
+              <summary>How does mentorship work?</summary>
+              <p>
+                Throughout the hackathon, we’ll host two shifts of industry
+                professionals aligned with your track. Mentors stop by to share
+                feedback and suggestions as you work. When you’re ready, signal
+                your team’s flag and they’ll dive in.
+              </p>
+            </details>
+
+            <details>
+              <summary>Are there any prerequisites or required skills?</summary>
+              <p>
+                While no prerequisites are required, it helps to have a team
+                where each member brings something different — design, coding,
+                presentation, or research. Curiosity is all you really need.
+              </p>
+            </details>
+
+            <details>
+              <summary>Does my solution have to be coded?</summary>
+              <p>
+                No! This hackathon welcomes prototypes, slide decks, and concept
+                demos just as much as polished builds. Show your idea in the
+                format that best highlights its impact.
+              </p>
+            </details>
+
+            <details>
+              <summary>How big are the teams?</summary>
+              <p>
+                Teams can include up to four individuals. Due to prize
+                logistics, teams may be smaller, but they can’t exceed four
+                participants.
+              </p>
+            </details>
+
+            <details>
+              <summary>Do I need to have a team before the event?</summary>
+              <p>
+                Not at all. You’ll have chances to meet collaborators before and
+                during the hackathon. Join our Team Formation event to connect
+                with other participants.
+              </p>
+            </details>
+
+            <details>
+              <summary>Do I need to have an idea before the event?</summary>
+              <p>
+                Nope. Use the time before kickoff to brainstorm with your team.
+                We ask that you don’t start building until hacking officially
+                begins, but prep those brainstorms early!
+              </p>
+            </details>
+
+            <details>
+              <summary>Who can participate in the hackathon?</summary>
+              <p>
+                Any current UW student is welcome to participate. Come as you
+                are — we can’t wait to see what you build.
+              </p>
+            </details>
+
+            <details>
+              <summary>Can we network with the mentors or sponsors?</summary>
+              <p>
+                Absolutely. Mentors and sponsors are excited to learn about your
+                project, offer feedback, and share advice. It’s a fantastic
+                opportunity to build connections.
+              </p>
+            </details>
+
+            <details>
+              <summary>How long will the hackathon be?</summary>
+              <p>
+                The hackathon runs a full day (roughly 8:30 AM – 8:30 PM), with
+                judging and presentations for finalists happening the following
+                afternoon from 12:00 PM – 4:00 PM.
+              </p>
+            </details>
+
+            <details>
+              <summary>Can I join remotely?</summary>
+              <p>
+                This year’s hackathon is in-person only so we can foster
+                community and collaboration.
+              </p>
+            </details>
+
+            <details>
+              <summary>Will there be training prior to the hackathon?</summary>
+              <p>
+                Yes! We’re hosting two workshops before the event, plus sharing
+                guides on Figma and GitHub to help you get started. Watch our
+                socials for details.
+              </p>
+            </details>
+
+            <details>
+              <summary>What do I need to prepare?</summary>
+              <p>
+                Bring your laptop, charger, water bottle, and creative energy.
+                Optional: headphones, sketchbook, or anything that supports your
+                workflow.
+              </p>
+            </details>
+
+            <details>
+              <summary>Will food be provided?</summary>
+              <p>
+                Lunch and dinner are provided, with several dietary options
+                available. Snacks and hydration stations will be stocked all
+                day.
+              </p>
+            </details>
+
+            <details>
+              <summary>My question isn’t here!</summary>
+              <p>
+                Reach out to <a href="mailto:winfo@uw.edu">winfo@uw.edu</a> —
+                we’re happy to help.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ================= OCEAN BOTTOM (CTA) ================= -->
+    <section class="ocean bottom" aria-label="Call to action">
+      <div class="bottom-art" aria-hidden="true">
+        <img class="ship" src="assets/ocean-bottom/shipwreck.png" alt="" />
+        <img class="anchor" src="assets/ocean-bottom/anchor.png" alt="" />
+        <img class="treasure" src="assets/ocean-bottom/treasure.png" alt="" />
+        <img class="sand" src="assets/ocean-bottom/bottom-sand.png" alt="" />
+      </div>
+
+      <div class="content cta">
+        <div class="countdown" role="timer" aria-live="polite">
+          <div class="unit"><strong>30</strong><span>Days</span></div>
+          <div class="sep" aria-hidden="true">:</div>
+          <div class="unit"><strong>07</strong><span>Hours</span></div>
+          <div class="sep" aria-hidden="true">:</div>
+          <div class="unit"><strong>22</strong><span>Minutes</span></div>
+          <div class="sep" aria-hidden="true">:</div>
+          <div class="unit"><strong>15</strong><span>Seconds</span></div>
+        </div>
+        <h2>Are you ready to dive into the unknown?</h2>
+        <a href="#" class="btn-primary">REGISTER NOW</a>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer" aria-label="Footer">
+      <!-- Top art: sand extension + fish -->
+      <div class="footer-art" aria-hidden="true">
+        <!-- adjust src to your actual sand extension asset -->
+        <img
+          class="footer-sand"
+          src="assets/footer/sand-extension.png"
+          alt=""
+        />
+        <img class="footer-fish" src="assets/footer/footer-fish.png" alt="" />
+      </div>
+
+      <!-- Sponsors panel -->
+      <section class="sponsors" aria-label="Sponsor 1">
+        <h2 class="visually-hidden">Sponsors Panel 1</h2>
+        <div class="sponsors-panel">
+          <div class="sponsors-marquee">
+            <div class="sponsors-track">
+              <!-- Repeat sponsor cards; for now all Adobe -->
+              <div class="sponsor-card">
+                <img src="assets/sponsors/microsoft-logo.png" alt="Microsoft" />
+              </div>
+              <div class="sponsor-card">
+                <img src="assets/sponsors/ey-logo.png" alt="EY" />
+              </div>
+              <div class="sponsor-card">
+                <img src="assets/sponsors/accenture-logo.png" alt="Accenture" />
+              </div>
+              <div class="sponsor-card">
+                <img src="assets/sponsors/pitchbook-logo.png" alt="Pitchbook" />
+              </div>
+              <div class="sponsor-card">
+                <img
+                  src="assets/sponsors/cyborg-mobile-logo.png"
+                  alt="Cyborg"
+                />
+              </div>
+
+              <!-- duplicate set for seamless loop -->
+              <div class="sponsor-card">
+                <img src="assets/sponsors/microsoft-logo.png" alt="Microsoft" />
+              </div>
+              <div class="sponsor-card">
+                <img src="assets/sponsors/ey-logo.png" alt="EY" />
+              </div>
+              <div class="sponsor-card">
+                <img src="assets/sponsors/accenture-logo.png" alt="Accenture" />
+              </div>
+              <div class="sponsor-card">
+                <img src="assets/sponsors/pitchbook-logo.png" alt="Pitchbook" />
+              </div>
+              <div class="sponsor-card">
+                <img
+                  src="assets/sponsors/cyborg-mobile-logo.png"
+                  alt="Cyborg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sponsors" aria-label="Sponsors 2">
+        <h2 class="visually-hidden">Sponsors Panel 2</h2>
+        <div class="sponsors-panel">
+          <div class="sponsors-marquee">
+            <div class="sponsors-track">
+              <!-- Repeat sponsor cards; for now all Adobe -->
+              <div class="sponsor-card">
+                <img src="assets/sponsors/microsoft-logo.png" alt="Microsoft" />
+              </div>
+              <div class="sponsor-card">
+                <img src="assets/sponsors/ey-logo.png" alt="EY" />
+              </div>
+              <div class="sponsor-card">
+                <img src="assets/sponsors/accenture-logo.png" alt="Accenture" />
+              </div>
+              <div class="sponsor-card">
+                <img src="assets/sponsors/pitchbook-logo.png" alt="Pitchbook" />
+              </div>
+              <div class="sponsor-card">
+                <img
+                  src="assets/sponsors/cyborg-mobile-logo.png"
+                  alt="Cyborg"
+                />
+              </div>
+
+              <!-- duplicate set for seamless loop -->
+              <div class="sponsor-card">
+                <img src="assets/sponsors/microsoft-logo.png" alt="Microsoft" />
+              </div>
+              <div class="sponsor-card">
+                <img src="assets/sponsors/ey-logo.png" alt="EY" />
+              </div>
+              <div class="sponsor-card">
+                <img src="assets/sponsors/accenture-logo.png" alt="Accenture" />
+              </div>
+              <div class="sponsor-card">
+                <img src="assets/sponsors/pitchbook-logo.png" alt="Pitchbook" />
+              </div>
+              <div class="sponsor-card">
+                <img
+                  src="assets/sponsors/cyborg-mobile-logo.png"
+                  alt="Cyborg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="content footer-inner">
+        <!-- Divider line -->
+        <hr class="footer-divider" />
+
+        <!-- Bottom layout -->
+        <div class="footer-bottom">
+          <div class="footer-left">
+            <p class="made">
+              Special thanks to iAffiliates. Made in Seattle, Washington with ⊹
+              ࣪⋆.˚🪸⋆｡🐋°‧🫧
+            </p>
+          </div>
+
+          <div class="footer-right">
+            <div class="socials" aria-label="Social media">
+              <a href="#" aria-label="Website"
+                ><img src="assets/footer/website-logo.png"
+              /></a>
+              <a href="#" aria-label="Email"
+                ><img src="assets/footer/mail-logo.png"
+              /></a>
+              <a href="#" aria-label="Instagram"
+                ><img src="assets/footer/instagram-logo.png"
+              /></a>
+              <a href="#" aria-label="LinkedIn"
+                ><img src="assets/footer/linkedin-logo.png"
+              /></a>
+              <a href="#" aria-label="YouTube"
+                ><img src="assets/footer/youtube-logo.png"
+              /></a>
+              <a href="#" aria-label="Facebook"
+                ><img src="assets/footer/facebook-logo.png"
+              /></a>
+            </div>
+            <p class="copyright">©2025 WOMEN IN INFORMATICS</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const section = document.querySelector("#midnight");
+        if (!section) return;
+
+        const pin = section.querySelector(".pin") || section;
+        const panel =
+          section.querySelector(".schedule-panel") ||
+          section.querySelector(".content.schedules");
+        const inner =
+          document.getElementById("schedulesInner") ||
+          section.querySelector(".content.schedules");
+        if (!panel || !pin || !inner) return;
+
+        // --- lock window (Midnight zone is “active” while sticky is in view)
+        function isLockedPhase() {
+          const r = section.getBoundingClientRect();
+          return r.top <= 0 && r.bottom > window.innerHeight;
+        }
+
+        // We fake an internal scroll by translating the inner schedules block.
+        let offset = 0; // current virtual scroll offset (px)
+        let maxOff = 0; // how far we’re allowed to “scroll” the text
+        let viewH = 0; // the conceptual “visible window” height for release logic
+
+        function recalc() {
+          // Treat a window that fits nicely next to the cave art
+          // (tweak the margin number if you need more/less headroom)
+          const marginTopBottom = 180; // px of top+bottom breathing room
+          viewH = Math.max(260, window.innerHeight - marginTopBottom);
+
+          // How tall the content actually is
+          const total = inner.scrollHeight;
+
+          // We can slide the content until its end lines up with our conceptual window
+          maxOff = Math.max(0, total - viewH);
+
+          // Keep offset in bounds and re-apply transform
+          offset = Math.max(0, Math.min(offset, maxOff));
+          inner.style.transform = `translateY(${-offset}px)`;
+        }
+
+        // initial + on resize
+        recalc();
+        window.addEventListener("load", recalc);
+        window.addEventListener("resize", recalc);
+
+        // Helpers: whether our virtual scroll can consume more
+        const canDown = () => offset < maxOff - 1;
+        const canUp = () => offset > 0;
+
+        // Route wheel to the virtual scroller
+        function onWheel(e) {
+          if (!isLockedPhase()) return;
+          const dy = e.deltaY;
+
+          if (dy > 0) {
+            // down
+            if (canDown()) {
+              e.preventDefault();
+              offset = Math.min(maxOff, offset + dy);
+              inner.style.transform = `translateY(${-offset}px)`;
+            } else {
+              // at bottom → release to page scroll (no preventDefault)
+            }
+          } else if (dy < 0) {
+            // up
+            if (canUp()) {
+              e.preventDefault();
+              offset = Math.max(0, offset + dy);
+              inner.style.transform = `translateY(${-offset}px)`;
+            } else {
+              // at top → release to page scroll
+            }
+          }
+        }
+
+        // Keyboard (arrows, page up/down, space)
+        function onKey(e) {
+          if (!isLockedPhase()) return;
+          const keys = ["ArrowDown", "ArrowUp", "PageDown", "PageUp", " "];
+          if (!keys.includes(e.key)) return;
+
+          const step = Math.max(80, Math.floor(viewH * 0.9));
+          let dy = 0;
+          if (e.key === "ArrowDown" || e.key === "PageDown" || e.key === " ")
+            dy = step;
+          if (e.key === "ArrowUp" || e.key === "PageUp") dy = -step;
+
+          if (dy > 0 && canDown()) {
+            e.preventDefault();
+            offset = Math.min(maxOff, offset + dy);
+          }
+          if (dy < 0 && canUp()) {
+            e.preventDefault();
+            offset = Math.max(0, offset + dy);
+          }
+          inner.style.transform = `translateY(${-offset}px)`;
+        }
+
+        // Touch
+        let startY = 0;
+        function onTouchStart(e) {
+          if (isLockedPhase()) startY = e.touches[0].clientY;
+        }
+        function onTouchMove(e) {
+          if (!isLockedPhase()) return;
+          const dy = startY - e.touches[0].clientY; // swipe up => positive (scroll down)
+          if (dy > 0 && canDown()) {
+            e.preventDefault();
+            offset = Math.min(maxOff, offset + dy);
+          }
+          if (dy < 0 && canUp()) {
+            e.preventDefault();
+            offset = Math.max(0, offset + dy);
+          }
+          inner.style.transform = `translateY(${-offset}px)`;
+        }
+
+        // Attach with passive:false so we can preventDefault during lock
+        window.addEventListener("wheel", onWheel, { passive: false });
+        window.addEventListener("keydown", onKey, { passive: false });
+        window.addEventListener("touchstart", onTouchStart, { passive: true });
+        window.addEventListener("touchmove", onTouchMove, { passive: false });
+      })();
+    </script>
+  </body>
 </html>
