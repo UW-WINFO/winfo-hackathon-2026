@@ -355,104 +355,33 @@
       </div>
     </section>
 
-    <!-- Footer section -->
-    <footer class="about-footer">
-      <div class="layer footer-bg" aria-hidden="true">
-        <div class="sprite about-footer-bg" aria-hidden="true"></div>
-      </div>
-      <img src="assets_about/footer line.svg" alt="" class="footer-line" />
-      <p class="footer-text">
-        Special thanks to iAffiliates. Made in Seattle, Washington with ⊹
-        ࣪⋆.˚🪸⋆｡🐋°‧🫧
-      </p>
-      <div class="social-media">
-        <img
-          src="assets_about/Hackathon Website_icon/website.svg"
-          alt="Website"
-        />
-        <img src="assets_about/Hackathon Website_icon/email.svg" alt="Email" />
-        <img
-          src="assets_about/Hackathon Website_icon/instagram.svg"
-          alt="Instagram"
-        />
-        <img
-          src="assets_about/Hackathon Website_icon/linkedin.svg"
-          alt="LinkedIn"
-        />
-        <img
-          src="assets_about/Hackathon Website_icon/youtube.svg"
-          alt="YouTube"
-        />
-        <img
-          src="assets_about/Hackathon Website_icon/facebook.svg"
-          alt="Facebook"
-        />
-        <div class="caption">©2025 Women in Informatics</div>
-      </div>
-    </footer>
-    <script>
-      // Mobile nav toggle (hamburger)
-      (() => {
-        const nav = document.querySelector(".nav");
-        const toggleBtn = document.querySelector(".nav-toggle");
-        const navWrapper = document.getElementById("site-navigation");
-        const backdrop = document.querySelector("[data-nav-backdrop]");
-        const focusableSelectors =
-          'a[href], area[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
-
-        if (!nav || !toggleBtn || !navWrapper) return;
-
-        const setOpen = (open) => {
-          nav.classList.toggle("open", open);
-          toggleBtn.setAttribute("aria-expanded", String(open));
-          navWrapper.setAttribute("aria-hidden", String(!open));
-          document.body.style.overflow = open ? "hidden" : "";
-        };
-
-        // Initialize hidden state
-        setOpen(false);
-
-        toggleBtn.addEventListener("click", () => {
-          const isOpen = toggleBtn.getAttribute("aria-expanded") === "true";
-          setOpen(!isOpen);
-
-          // Move focus to first item when opening
-          if (!isOpen) {
-            const firstFocusable = navWrapper.querySelector(focusableSelectors);
-            firstFocusable?.focus();
-          }
-        });
-
-        // Close when clicking backdrop
-        backdrop?.addEventListener("click", () => setOpen(false));
-
-        // Close on escape key
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape") setOpen(false);
-        });
-
-        // Close when selecting a nav item (useful on mobile)
-        navWrapper.addEventListener("click", (e) => {
-          const target = e.target;
-          if (target && target.closest && target.closest(".nav-item")) {
-            setOpen(false);
-          }
-        });
-      })();
-
-      // Highlight "About" nav item when on about_us.html page
-      (() => {
-        const navLinks = document.querySelectorAll(".nav a.nav-item");
-        navLinks.forEach((link) => {
-          if (
-            link.getAttribute("href") === "about_us.html" ||
-            link.textContent.trim() === "About"
-          ) {
-            link.classList.add("active");
-            link.setAttribute("aria-current", "page");
-          }
-        });
-      })();
-    </script>
-  </body>
+  <!-- Footer section -->
+  <footer class="about-footer">
+    <div class="layer footer-bg" aria-hidden="true">
+      <div class="sprite about-footer-bg" aria-hidden="true"></div>
+    </div>
+    
+    <div class="sponsor-logos">
+      <img src="assets_about/microsoft.png" alt="Microsoft" />
+      <img src="assets_about/ey.png" alt="EY" />
+      <img src="assets_about/adobe.png" alt="Adobe" />
+      <img src="assets_about/accenture.png" alt="Accenture" />
+      <img src="assets_about/pitchbook.png" alt="PitchBook" />
+      <img src="assets_about/cyborg.png" alt="Cyborg" />
+    </div>
+    
+    <img src="assets_about/footer line.svg" alt="" class="footer-line" />
+    <p class="footer-text">Special thanks to iAffiliates. Made in Seattle, Washington with ⊹ ࣪⋆.˚🪸⋆｡🐋°‧🫧</p>
+    <div class="social-media">
+      <img src="assets_about/Hackathon Website_icon/website.svg" alt="Website" />
+      <img src="assets_about/Hackathon Website_icon/email.svg" alt="Email" />
+      <img src="assets_about/Hackathon Website_icon/instagram.svg" alt="Instagram" />
+      <img src="assets_about/Hackathon Website_icon/linkedin.svg" alt="LinkedIn" />
+      <img src="assets_about/Hackathon Website_icon/youtube.svg" alt="YouTube" />
+      <img src="assets_about/Hackathon Website_icon/facebook.svg" alt="Facebook" />
+      <div class="caption">©2025 Women in Informatics</div>
+    </div>
+  </footer>
+  
+</body>
 </html>

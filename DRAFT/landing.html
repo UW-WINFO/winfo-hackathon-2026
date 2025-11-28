@@ -1190,5 +1190,65 @@
         setTimeout(updateActive, 350);
       })();
     </script>
+    <script>
+      // Countdown timer
+      (function () {
+        // Event date: January 25th, 2026 at 8:00 AM (PST/PDT)
+        const eventDate = new Date("2026-01-25T08:00:00-08:00").getTime();
+
+        function updateCountdown() {
+          const countdownEl = document.querySelector(".countdown");
+          if (!countdownEl) return;
+
+          const now = Date.now();
+          let diff = eventDate - now;
+
+          // Get all the <strong> elements within .unit divs
+          const units = countdownEl.querySelectorAll(".unit strong");
+          
+          if (units.length !== 4) {
+            console.warn("Expected 4 countdown units, found:", units.length);
+            return;
+          }
+
+          if (diff <= 0) {
+            // Event has started or passed
+            countdownEl.innerHTML = '<div class="unit"><strong>00</strong><span>Event Started!</span></div>';
+            countdownEl.setAttribute("aria-label", "Event has started");
+            return;
+          }
+
+          // Calculate time difference
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+          // Update the countdown values
+          // Order: Days, Hours, Minutes, Seconds (matching HTML structure)
+          units[0].textContent = days.toString().padStart(2, "0");
+          units[1].textContent = hours.toString().padStart(2, "0");
+          units[2].textContent = minutes.toString().padStart(2, "0");
+          units[3].textContent = seconds.toString().padStart(2, "0");
+
+          // Update aria-label for accessibility
+          const timeString = `${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds until the event`;
+          countdownEl.setAttribute("aria-label", timeString);
+        }
+
+        // Update immediately on load
+        updateCountdown();
+
+        // Update every second
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        // Clean up interval when page unloads (optional, but good practice)
+        window.addEventListener("beforeunload", () => {
+          if (countdownInterval) {
+            clearInterval(countdownInterval);
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
