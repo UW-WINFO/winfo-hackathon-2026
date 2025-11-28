@@ -11,12 +11,26 @@
   <body>
     <!--navigation bar-->
     <nav class="nav" aria-hidden="false">
-      <div class="nav-wrapper">
+      <button
+        class="nav-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+      >
+        <img src="assets/nav/hamburger.png" alt="Menu" class="hamburger-icon" />
+        <span class="hamburger" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+
+      <div id="site-navigation" class="nav-wrapper" role="navigation">
         <a href="#home" class="nav-item">Home</a>
         <a href="#schedule" class="nav-item">Schedule</a>
         <a href="#faq" class="nav-item">FAQ</a>
         <a href="about_us.html" class="nav-item">About</a>
       </div>
+
+      <div class="nav-backdrop" data-nav-backdrop></div>
     </nav>
     <!-- ================= HERO ================= -->
     <header class="hero wrap" aria-label="Intro" id="home">

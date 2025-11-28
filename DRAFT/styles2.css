@@ -366,6 +366,10 @@ header.hero .layer {
     width: 100%;
   }
 
+    /* Hide mobile-only controls by default (desktop/tablet) */
+    .nav-toggle { display: none; }
+    .nav-backdrop { display: none; }
+
   .nav-wrapper {
     background: rgba(255,255,255,0.5);
     padding: 10px 18px;
@@ -1139,6 +1143,111 @@ section.reef .layer {
         --spacing-lg: clamp(1.5rem, 6vw, 2.5rem);
         --spacing-xl: clamp(2rem, 8vw, 3.5rem);
     }
+
+    /* mobile menu rules */
+    .nav-wrapper {
+        position: fixed;
+        top: 12px;
+        right: 12px;      
+        z-index: 10000;                    
+        width: 50vw;
+        max-width: 50vw !important;
+        height: auto !important;    
+        max-height: 40vh !important;
+        overflow: auto;                        
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;   
+        justify-content: flex-start; 
+        gap: 6px;                  
+
+        background: rgba(255,255,255,0.9);
+        -webkit-backdrop-filter: blur(1px);
+        backdrop-filter: blur(1px);
+        border: 1px solid #DDE6EB;
+        border-radius: 18px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+
+        transform: translateX(110%); 
+        transition: transform .28s cubic-bezier(.2,.9,.2,1);
+    }
+    
+    .nav-wrapper .nav-item {
+        display: block;
+        text-align: left;
+        padding: 4px 6px;            /* tighten vertical spacing */
+    }
+
+    /* underline */
+    .nav-wrapper .nav-item::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;                 /* closer to text, as before */
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        width: 80%;
+        height: 3px;                  /* desktop thickness */
+        background: #0b3039;
+        border-radius: 3px;           /* rounded ends */
+        transition: transform 0.3s ease;
+        transform-origin: center;
+    }
+    .nav-wrapper .nav-item.active::after,
+    .nav-wrapper .nav-item[aria-current="true"]::after {
+        transform: translateX(-50%) scaleX(1);
+    }
+    
+    /* Hover animation to match desktop on mobile */
+    .nav-wrapper .nav-item:hover::after {
+        transform: translateX(-50%) scaleX(0.5);
+        opacity: 0.6;
+    }
+    
+    .nav-toggle {
+        position: fixed;
+        top: 12px;
+        left: 12px;         
+        z-index: 10001;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 0;
+        border-radius: 10px;
+        background: transparent;       
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        box-shadow: none;
+    }
+    .nav-toggle .hamburger-icon { width: 22px; height: 22px; display: block; }
+    .nav-toggle .hamburger { display: none; }
+    .nav-toggle .hamburger-icon { width: 22px; height: 22px; display: block; }
+    .nav-toggle .hamburger { display: none; }
+    
+    /* Backdrop */
+    .nav-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.24);
+        z-index: 9999;
+        display: block;
+        opacity: 0;
+        transition: opacity .2s ease;
+    }
+
+    /* Open state: show panel and backdrop */
+    .nav.open .nav-wrapper {
+        transform: translateX(0);
+    }
+    .nav.open .nav-backdrop {
+        opacity: 1;
+    }
+
+    /* Hamburger animation */
+    .nav.open .hamburger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav.open .hamburger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav.open .hamburger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
     
     /* Hero content for mobile */
     header.hero.about .hero-content {

@@ -10,12 +10,26 @@
   <body>
     <!-- navigation bar-->
     <nav class="nav" aria-hidden="false">
-      <div class="nav-wrapper">
+      <button
+        class="nav-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+      >
+        <img src="assets/nav/hamburger.png" alt="Menu" class="hamburger-icon" />
+        <span class="hamburger" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+
+      <div id="site-navigation" class="nav-wrapper" role="navigation">
         <a href="landing.html#home" class="nav-item">Home</a>
         <a href="landing.html#schedule" class="nav-item">Schedule</a>
         <a href="landing.html#faq" class="nav-item">FAQ</a>
         <a href="about_us.html" class="nav-item">About</a>
       </div>
+
+      <div class="nav-backdrop" data-nav-backdrop></div>
     </nav>
     <!-- hero/about us section -->
     <header class="hero wrap about">
@@ -377,6 +391,55 @@
       </div>
     </footer>
     <script>
+      // Mobile nav toggle (hamburger)
+      (() => {
+        const nav = document.querySelector(".nav");
+        const toggleBtn = document.querySelector(".nav-toggle");
+        const navWrapper = document.getElementById("site-navigation");
+        const backdrop = document.querySelector("[data-nav-backdrop]");
+        const focusableSelectors =
+          'a[href], area[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+        if (!nav || !toggleBtn || !navWrapper) return;
+
+        const setOpen = (open) => {
+          nav.classList.toggle("open", open);
+          toggleBtn.setAttribute("aria-expanded", String(open));
+          navWrapper.setAttribute("aria-hidden", String(!open));
+          document.body.style.overflow = open ? "hidden" : "";
+        };
+
+        // Initialize hidden state
+        setOpen(false);
+
+        toggleBtn.addEventListener("click", () => {
+          const isOpen = toggleBtn.getAttribute("aria-expanded") === "true";
+          setOpen(!isOpen);
+
+          // Move focus to first item when opening
+          if (!isOpen) {
+            const firstFocusable = navWrapper.querySelector(focusableSelectors);
+            firstFocusable?.focus();
+          }
+        });
+
+        // Close when clicking backdrop
+        backdrop?.addEventListener("click", () => setOpen(false));
+
+        // Close on escape key
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") setOpen(false);
+        });
+
+        // Close when selecting a nav item (useful on mobile)
+        navWrapper.addEventListener("click", (e) => {
+          const target = e.target;
+          if (target && target.closest && target.closest(".nav-item")) {
+            setOpen(false);
+          }
+        });
+      })();
+
       // Highlight "About" nav item when on about_us.html page
       (() => {
         const navLinks = document.querySelectorAll(".nav a.nav-item");
