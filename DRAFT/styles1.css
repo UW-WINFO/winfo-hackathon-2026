@@ -164,6 +164,41 @@ p {
   /* space from element above */
 }
 
+/* Navigation */
+
+.nav{
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+  }
+
+  .nav-wrapper {
+    background: rgba(255,255,255,0.5);
+    padding: 10px 18px;
+    border-radius: 1000px;
+    font-family: "brother-1816";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    border-radius: 1000px;
+    border: 1px solid #DDE6EB;
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+    display: flex;
+    flex-direction: row;
+    margin: 1% auto 0 auto;
+    padding: 1% 2%;
+    width: 90%; 
+    justify-content: center;
+  }
+
+  .nav-item {
+    flex: 0 1 8%;
+    text-align: center;
+    
+  }
+
 /* ---------- Hero (sky + surface) ---------- */
 header.hero {
   min-height: var(--hero-h);
