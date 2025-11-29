@@ -9,7 +9,7 @@
   </head>
   <body>
     <!-- navigation bar-->
-    <nav class="nav" aria-hidden="false">
+    <nav class="nav auto-contrast" aria-hidden="false">
       <button
         class="nav-toggle"
         aria-label="Open menu"
@@ -452,6 +452,67 @@
             link.setAttribute("aria-current", "page");
           }
         });
+      })();
+    </script>
+    <script>
+      (function () {
+        const nav = document.querySelector(".nav");
+        if (!nav) return;
+        const wrapper = document.querySelector(".nav-wrapper") || nav;
+        function getEffectiveBg(el) {
+          while (el && el !== document.documentElement) {
+            const cs = getComputedStyle(el);
+            const bg = cs.backgroundColor;
+            if (bg && bg !== "rgba(0, 0, 0, 0)" && bg !== "transparent")
+              return bg;
+            el = el.parentElement;
+          }
+          return "rgb(255,255,255)";
+        }
+        function rgbBrightness(rgb) {
+          const m = rgb.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+          if (!m) return 255;
+          const r = +m[1],
+            g = +m[2],
+            b = +m[3];
+          return 0.2126 * r + 0.7152 * g + 0.0722 * b; // relative luminance
+        }
+        function updateInvert() {
+          const rect = nav.getBoundingClientRect();
+          const sampleX = window.innerWidth / 2;
+          const sampleY = rect.bottom + 6; // below nav
+          const el = document.elementFromPoint(sampleX, sampleY);
+          if (!el) {
+            nav.classList.remove("invert");
+            wrapper.classList.remove("invert");
+            return;
+          }
+          const bg = getEffectiveBg(el);
+          const bright = rgbBrightness(bg);
+          if (bright < 128) {
+            nav.classList.add("invert");
+            wrapper.classList.add("invert");
+          } else {
+            nav.classList.remove("invert");
+            wrapper.classList.remove("invert");
+          }
+        }
+        let ticking = false;
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (!ticking) {
+              requestAnimationFrame(() => {
+                updateInvert();
+                ticking = false;
+              });
+              ticking = true;
+            }
+          },
+          { passive: true }
+        );
+        window.addEventListener("resize", updateInvert);
+        updateInvert();
       })();
     </script>
   </body>

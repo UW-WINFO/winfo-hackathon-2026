@@ -366,9 +366,9 @@ header.hero .layer {
     width: 100%;
   }
 
-    /* Hide mobile-only controls by default (desktop/tablet) */
-    .nav-toggle { display: none; }
-    .nav-backdrop { display: none; }
+  /* Hide mobile-only controls by default (desktop & tablet) */
+  .nav-toggle,
+  .nav-backdrop { display: none; }
 
   .nav-wrapper {
     background: rgba(255,255,255,0.5);
@@ -396,9 +396,9 @@ header.hero .layer {
   text-align: center;
   position: relative;
   text-decoration: none;
-  color: inherit;
+    color: #0b3039; /* explicit base color to enable smooth transition */
   cursor: pointer;
-  transition: font-weight 0.2s ease;
+    transition: font-weight 0.2s ease, color 0.4s ease;
 }
 
 /* Underline indicator */
@@ -406,13 +406,13 @@ header.hero .layer {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: -8px;
+  bottom: -4px; /* closer to text */
   transform: translateX(-50%) scaleX(0);
   width: 80%;
-  height: 3px;
-  background: #0b3039;
-  border-radius: 3px;
-  transition: transform 0.3s ease;
+  height: 2px; /* thinner underline */
+  background: #0b3039; /* base underline color */
+  border-radius: 2px;
+  transition: transform 0.3s ease, background-color 0.4s ease;
   transform-origin: center;
 }
 
@@ -442,6 +442,12 @@ header.hero .layer {
   transform: translateX(-50%) scaleX(1);
   opacity: 1;
 }
+
+  /* Invert mode: when nav sits over dark background */
+  .nav.invert .nav-item,
+  .nav-wrapper.invert .nav-item { color: #ffffff; }
+  .nav.invert .nav-item::after,
+  .nav-wrapper.invert .nav-item::after { background: #ffffff; }:after { background: #ffffff; }
 
 /* about page clouds sprite - responsive full width */
 .about-clouds {
@@ -1176,6 +1182,7 @@ section.reef .layer {
         display: block;
         text-align: left;
         padding: 4px 6px;            /* tighten vertical spacing */
+        transition: color 0.35s ease;
     }
 
     /* underline */
@@ -1186,10 +1193,10 @@ section.reef .layer {
         left: 50%;
         transform: translateX(-50%) scaleX(0);
         width: 80%;
-        height: 3px;                  /* desktop thickness */
+        height: 2px;                  /* thinner underline */
         background: #0b3039;
-        border-radius: 3px;           /* rounded ends */
-        transition: transform 0.3s ease;
+        border-radius: 2px;           /* rounded ends */
+        transition: transform 0.3s ease, background-color 0.35s ease;
         transform-origin: center;
     }
     .nav-wrapper .nav-item.active::after,
