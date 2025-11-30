@@ -70,11 +70,22 @@ body {
   /* remove default page margin */
   color: var(--ink);
   /* use the main text color */
-  background: url("assets/background/bg.png") center top / cover no-repeat;
   background-color: white;
   font-family: 'brother-1816', sans-serif;
   font-weight: 400;
   line-height: 1.5;
+}
+
+/* Desktop default */
+body.bg-desktop{
+  background: url("assets/background/bg-desktop.png") center top/cover no-repeat;
+}
+
+/* Mobile override */
+@media (max-width: 768px){
+  body.bg-desktop{
+    background: url("assets/background/bg-mobile.png") center top/cover no-repeat;
+  }
 }
 
 h1,
@@ -1720,4 +1731,159 @@ section.reef .layer {
     .nav.open .hamburger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .nav.open .hamburger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
     .nav.open .hamburger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+
+
+
+
+@media (max-width: 768px){
+  .intro {
+    position: absolute;
+    top: 18vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 86vw;
+    padding: 0;
+    text-align: left;
+    z-index: var(--z-intro);
+  }
+
+  /* EVENT TITLE: "Women of Informatics’ 14th Annual Hackathon" */
+  .intro h1 {
+    margin-bottom: 1rem;
+    font-size: clamp(2.6rem, 8vw, 3.2rem);  /* MUCH bigger */
+    line-height: 1.1;
+  }
+
+  /* DATE + LOCATION: "January 24–25, 2026" / "UNIVERSITY OF WASHINGTON HUB" */
+  header.hero .meta {
+    margin-top: 0.75rem;
+    font-size: clamp(1.05rem, 3.6vw, 1.25rem);  /* increase size */
+    row-gap: 6px;
+  }
+
+  /* optionally, make those meta labels a bit bolder */
+  header.hero .meta span,
+  header.hero .meta div {
+    font-weight: 600;
+    font-size: 14px !important;
+  }
+
+  /* keep cat smaller + lower */
+  .hero-figure .cat {
+    top: 62vh;
+    left: 30%;
+    width: 65vw;
+    min-width: 0;
+    margin-left: -27.5vw;
+  }
+
+  .froth .water {
+    top: 58%;
+  }
+
+  .surface .water {
+    top: 60%;
+  }
+
+  .surface .rainbow {
+    top: 29%;
+    width: 50vw;
+  }
+
+  .dive-in {
+    top: -90vw;
+  }
+
+  .dive-in h1 {
+    font-size: 8vw !important;
+  }
+
+  .dive-in p {
+    font-size: 4vw !important;
+  }
+
+  .mola .fish {
+    top: 10%;
+    right: 30vw;
+  }
+
+  .rays .beams {
+    top: -30%;
+    height: 150vh;
+    right: 5vw;
+  }
+
+  .theme-content {
+    top: -15vw;
+  }
+
+  .content h1 {
+    font-size: 8vw !important;
+  }
+
+  .content p {
+    font-size: 4vw !important;
+  }
+
+  section.reef {
+    min-height: 75vh;
+  }
+
+  .school .sprite {
+    top: 13vh;
+    left: 18vw;
+    width: 35vw;
+    min-width: 100px;
+  }
+
+  .decor-fish .blue {
+    top: 34vh;
+    left: 32vw;
+    width: 12vw;
+    min-width: 20px;
+  }
+
+  .decor-fish .clown {
+    top: 38vh;
+    left: 40vw;
+    width: 6vw;
+    min-width: 10px;
+  }
+
+  .decor-fish .trigger {
+    top: 21vh;
+    right: 13vw;
+    width: 12vw;
+    min-width: 20px;
+  }
+
+  .reefs .left {
+    bottom: 6vh;
+    left: 0;
+    width: 58vw;
+    min-width: 100px;
+  }
+
+  .reefs .right {
+    bottom: 5vh;
+    right: 0;
+    width: 34vw;
+    min-width: 100px;
+  }
+
+  .rocks .shelf {
+    bottom: 0;
+  }
+
+  .shark .leo {
+    bottom: 8vh;
+    left: 15vw;
+    width: 45vw;
+    min-width: 120px;
+  }
+
+  .decor-crab {
+    display: none;
+  }
 }
