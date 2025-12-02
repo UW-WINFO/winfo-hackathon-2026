@@ -1,7 +1,5 @@
 /* ---------- Tokens ---------- */
 :root {
-    --ink: #0b3039;            /* main text color used across the page */
-    --ink-soft: #214650;       /* softer secondary text color */
     --maxw: 60vh;             /* max readable width for text blocks */
 
     --hero-h: 150vh;
@@ -48,13 +46,6 @@
     --about-horizon-overlap: clamp(2vh, 4vw, 6vh);
     --about-ripples-offset: clamp(0vh, 1vw, 2vh);
     
-    /* Responsive typography for about page */
-    --h1-size: clamp(2.5rem, 2.94rem, 3rem);
-    --h2-size: clamp(1.75rem, 2.5vw, 2.5rem);
-    --p-size: clamp(1.1rem, 1.25rem + 0.5vw, 1.5rem);
-    --caption-size: clamp(0.7rem, 0.9vw, 0.9rem);
-    --footer-caption-size: clamp(0.7rem, 0.9vw, 0.95rem);
-    
     /* Responsive spacing for about page */
     --spacing-sm: clamp(1rem, 1.5vw, 1.5rem);
     --spacing-md: clamp(1rem, 2vw, 2rem);
@@ -63,50 +54,7 @@
 }
 
 /* ---------- Base ---------- */
-* {
-    box-sizing: border-box;    /* padding/border are included in width/height */
-}
 
-html, body {
-    height: 100%;              /* allow 100vh calculations to work as expected */
-}
-
-body {
-    margin: 0;                 /* remove default page margin */
-    color: var(--ink);         /* use the main text color */
-    background: url("assets/background/bg.png") center top / cover no-repeat;
-    font-family: 'brother-1816', sans-serif;
-    font-weight: 400;
-    line-height: 1.5;
-}
-
-h1, h2 {
-    line-height: 1.2;          /* tighter heading line-height */
-    margin: 0 0 var(--spacing-sm);         /* remove top margin, keep bottom rhythm */
-}
-
-h1 {
-    font-family: 'brother-1816-printed', 'brother-1816', sans-serif;
-    font-size: var(--h1-size);
-    font-style: italic;
-    font-weight: 500; 
-    font-feature-settings: "calt" 1, "ordn" 1, "swsh" 1;
-}
-
-h2 {
-    font-family: 'brother-1816-printed', sans-serif;
-    font-size: var(--h2-size);
-    font-weight: 500;
-}
-
-p {
-    margin: var(--spacing-sm) 0;           /* vertical rhythm for paragraphs */
-    font-size: var(--p-size);
-}
-
-a {
-    color: inherit;
-}
 
 .background {
     top: 0;
@@ -218,6 +166,7 @@ section.committee-members .grid-row.row-4 {
 /* Member styling in committee grid */
 section.committee-members .member {
     text-align: center;
+    
 }
 
 /* Remove paragraph margin in committee members */
@@ -240,21 +189,9 @@ section.committee-members .member .photo {
                                /* gentle highlight + glow to lift text on busy BG */
 }
 
-.caption {
-    font-size: var(--caption-size);           /* small label style */
-    letter-spacing: .04em;     /* slight tracking for uppercase */
-    text-transform: uppercase; /* label look */
-    color: var(--ink-soft);    /* softer tone */
-    margin-top: var(--spacing-sm);           /* space from element above */
-}
-
 /* Caption styling in committee grid */
 section.committee-members .member .caption {
     color: var(--Text-Text-Tertiary, #B1A8B3);
-    text-align: center;
-    font-feature-settings: 'calt' off;
-    margin-top: 0;                /* remove spacing between name and role */
-    font-weight: bold;
 }
 
 /* ---------- Hero (sky + surface) ---------- */
@@ -658,11 +595,7 @@ section[class="2024-winners"] .winner-image-full img {
 
 /* Winner image captions */
 section[class="2024-winners"] .winner-image-wrapper .caption {
-    margin-top: var(--spacing-sm);
     color: var(--Text-Text-Primary, #F2F2F4);
-    font-size: var(--caption-size);
-    text-align: left;
-    font-weight: bold;
 }
 
 /* Footer section - positioned under 2024-winners */
@@ -729,7 +662,6 @@ footer.about-footer .footer-text {
     top: calc(68% + 2px + var(--spacing-sm)); /* footer line top + line height + spacing */
     left: clamp(9%, 12%, 13%);
     margin: 0;
-    font-size: var(--p-size);
     z-index: calc(var(--z-gradient-bg-2) + 2); /* same level as footer line */
 }
 
@@ -756,11 +688,6 @@ footer.about-footer .caption {
     position: absolute;
     top: calc(40% + 2px + var(--spacing-sm) + 1.5rem); /* footer line top + line height + spacing + offset (between text and social) */
     right: clamp(5%, 6%, 14%);
-    text-align: right;
-    font-size: var(--footer-caption-size);
-    font-weight: bold;
-    font-feature-settings: 'calt' off;
-    margin: 0;
     z-index: calc(var(--z-gradient-bg-2) + 2); /* same level as footer line */
     color: var(--Cool-Black, #101111); /* ensure text is visible */
 }
@@ -1152,12 +1079,12 @@ section.reef .layer {
 }
 
 /* Mobile responsive styles */
-@media (max-width: 480px) {
+@media (max-width: 599px) {
     :root {
         /* Adjust typography for mobile */
         --h1-size: clamp(2rem, 8vw, 2.5rem);
         --h2-size: clamp(1.5rem, 6vw, 2rem);
-        --p-size: clamp(0.95rem, 4vw, 1.15rem);
+        --p-size: clamp(1.125rem, 1.125rem + 0.5vw, 1.125rem); /* 18px */
         --caption-size: clamp(0.65rem, 3vw, 0.8rem);
         --footer-caption-size: clamp(0.65rem, 2vw, 0.75rem);
         
@@ -1353,7 +1280,7 @@ section.reef .layer {
     
     .gradient-bg-2.about-gradient-bg-2 {
         top: calc(var(--about-mountain-top) + var(--about-mountain-height) - var(--about-horizon-overlap) + 100vw * 6.1);
-        height: calc(6300/ 390 * 100vw);
+        height: calc(6700/ 390 * 100vw);
     }
     
     .about-color-block-left {
@@ -1401,9 +1328,10 @@ section.reef .layer {
         grid-column: 2;  /* Kaitlyn */
     }
     
-    /* Row 3: Cleo centered - spans both columns */
+    /* Row 3: Cleo centered */
     section.committee-members .grid-row:nth-child(2) .member:nth-child(3) {
         grid-column: 1 / 3;  /* Cleo centered */
+        justify-self: center; 
     }
     
     /* Row 4: Chloe and Dawn - normal 2 columns */
@@ -1480,7 +1408,7 @@ section.reef .layer {
     }
     
     .about-footer-bg {
-        top: clamp(-26vw, -33vw, -200px);
+        top: clamp(-26vw, -35vw, -500px);
         height: calc(407 / 390 );
     }
     
@@ -1493,7 +1421,6 @@ section.reef .layer {
     footer.about-footer .footer-text {
         top: calc(60% + 2px + var(--spacing-sm));
         left: 9%;
-        font-size: clamp(0.85rem, 4.5vw, 1rem);
     }
     
     footer.about-footer .social-media {
@@ -1512,7 +1439,6 @@ section.reef .layer {
     footer.about-footer .caption {
         top: calc(60% + 2px + var(--spacing-sm) + 2rem);
         right: 5%;
-        font-size: var(--footer-caption-size);
     }
 }
 
@@ -1522,7 +1448,6 @@ section.reef .layer {
         /* Adjust typography for tablets */
         --h1-size: clamp(2.25rem, 5vw, 2.75rem);
         --h2-size: clamp(1.75rem, 4vw, 2.25rem);
-        --p-size: clamp(1rem, 2.5vw, 1.35rem);
         --caption-size: clamp(0.7rem, 2vw, 0.85rem);
         --footer-caption-size: clamp(0.7rem, 2vw, 0.85rem);
         
