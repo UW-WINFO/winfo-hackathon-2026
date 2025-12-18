@@ -838,8 +838,6 @@ section.reef .layer {
    A) normal scroll → B) sticky with inner scroll → C) unpin and scroll out */
 .midnight {
   position: relative;
-  --cave-extra: 120vh;
-  min-height: calc(180vh + var(--cave-extra));
   background: #233137;
   /* baseline bg color, overriden with gradient below */
   color: #eaf3f6;
@@ -850,7 +848,7 @@ section.reef .layer {
 
   padding-bottom: 80px;
   z-index: 0;
-  /* stays under the FAQ we’re about to raise */
+  /* stays under the FAQ we're about to raise */
 }
 
 /* Soft atmospheric darkening over the art for readability */
@@ -1149,14 +1147,20 @@ section.reef .layer {
 }
 
 .faq-grid {
-  display: grid;
+  display: flex;
   gap: 16px;
-  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-start;
+}
+
+.faq-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 800px) {
   .faq-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 }
 
