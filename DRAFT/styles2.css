@@ -556,7 +556,7 @@ section[class="2024-winners"] .winner p:last-of-type {
 /* Winner images container */
 section[class="2024-winners"] .winner-images {
     display: flex;
-    justify-content: space-between;  /* spread across full width like text */
+    justify-content: flex-start; 
     gap: var(--spacing-sm);
     margin-top: var(--spacing-sm);
     margin-bottom: clamp(7rem, 12vw, 11rem);
