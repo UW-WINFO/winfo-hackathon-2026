@@ -949,8 +949,9 @@
         window.addEventListener("resize", recalc);
 
         // Helpers: whether our virtual scroll can consume more
-        const canDown = () => offset < maxOff - 1;
-        const canUp = () => offset > 0;
+        const EPS = 8;
+        const canDown = () => offset < maxOff - EPS;
+        const canUp = () => offset > EPS;
 
         // Route wheel to the virtual scroller
         function onWheel(e) {
@@ -1025,6 +1026,20 @@
         window.addEventListener("keydown", onKey, { passive: false });
         window.addEventListener("touchstart", onTouchStart, { passive: true });
         window.addEventListener("touchmove", onTouchMove, { passive: false });
+
+        let lastScrollY = window.pageYOffset;
+        let lastLocked = isLockedPhase();
+        function onScrollBoundary() {
+          const y = window.pageYOffset;
+          const nowLocked = isLockedPhase();
+          if (!lastLocked && nowLocked && y < lastScrollY) {
+            offset = 0;
+            inner.style.transform = "translateY(0px)";
+          }
+          lastLocked = nowLocked;
+          lastScrollY = y;
+        }
+        window.addEventListener("scroll", onScrollBoundary, { passive: true });
 
         /* Expose a reset function so external code (nav) can restore the schedules scroller */
         window.resetScheduleScroller = function () {
