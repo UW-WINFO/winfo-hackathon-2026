@@ -755,12 +755,13 @@ section.reef .layer {
   margin-top: 18px;
 }
 
-.track .focus .label {
+.track .focus .meta .caption {
   font-size: 12px;
   letter-spacing: .08em;
   text-transform: uppercase;
   color: #b7cdd6;
   margin-bottom: 8px;
+  color: inherit;
 }
 
 .track .focus ul {
