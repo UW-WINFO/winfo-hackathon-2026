@@ -1,9 +1,5 @@
 /* ---------- Tokens ---------- */
 :root {
-  --ink: #0b3039;
-  /* main text color used across the page */
-  --ink-soft: #214650;
-  /* softer secondary text color */
   --maxw: 820px;
   /* max readable width for text blocks */
   --pin-extra: 2500px;
@@ -53,58 +49,6 @@
   /* background fallback */
 }
 
-/* ---------- Base ---------- */
-* {
-  box-sizing: border-box;
-  /* padding/border are included in width/height */
-}
-
-html,
-body {
-  height: 100%;
-  /* allow 100vh calculations to work as expected */
-}
-
-body {
-  margin: 0;
-  /* remove default page margin */
-  color: var(--ink);
-  /* use the main text color */
-  background: url("assets/background/bg.png") center top / cover no-repeat;
-  background-color: white;
-  font-family: 'brother-1816', sans-serif;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-h1,
-h2 {
-  line-height: 1.2;
-  /* tighter heading line-height */
-  margin: 0 0 .6rem;
-  /* remove top margin, keep bottom rhythm */
-}
-
-h1 {
-  font-family: 'brother-1816-printed', 'brother-1816', sans-serif;
-  font-size: 47px;
-  font-style: italic;
-  font-weight: 500;
-  font-feature-settings: "calt" 1, "ordn" 1, "swsh" 1;
-}
-
-h2 {
-  font-family: 'brother-1816-printed', sans-serif;
-  font-size: 32px;
-  font-weight: 500;
-}
-
-p {
-  margin: 1.5rem 0;
-  /* vertical rhythm for paragraphs */
-  font-size: 20px;
-}
-
 .background {
   top: 0;
   width: 100%;
@@ -149,19 +93,6 @@ p {
 .shadow-soft {
   text-shadow: 0 1px 0 rgba(255, 255, 255, .6), 0 2px 12px rgba(11, 48, 57, .25);
   /* gentle highlight + glow to lift text on busy BG */
-}
-
-.caption {
-  font-size: 12px;
-  /* small label style */
-  letter-spacing: .04em;
-  /* slight tracking for uppercase */
-  text-transform: uppercase;
-  /* label look */
-  color: var(--ink-soft);
-  /* softer tone */
-  margin-top: 8px;
-  /* space from element above */
 }
 
 /* Navigation */
@@ -830,12 +761,13 @@ section.reef .layer {
   margin-top: 18px;
 }
 
-.track .focus .label {
+.track .focus .meta .caption {
   font-size: 12px;
   letter-spacing: .08em;
   text-transform: uppercase;
   color: #b7cdd6;
   margin-bottom: 8px;
+  color: inherit;
 }
 
 .track .focus ul {
@@ -913,8 +845,6 @@ section.reef .layer {
    A) normal scroll → B) sticky with inner scroll → C) unpin and scroll out */
 .midnight {
   position: relative;
-  --cave-extra: 120vh;
-  min-height: calc(180vh + var(--cave-extra));
   background: #233137;
   /* baseline bg color, overriden with gradient below */
   color: #eaf3f6;
@@ -925,7 +855,7 @@ section.reef .layer {
 
   padding-bottom: 80px;
   z-index: 0;
-  /* stays under the FAQ we’re about to raise */
+  /* stays under the FAQ we're about to raise */
 }
 
 /* Soft atmospheric darkening over the art for readability */
@@ -1062,6 +992,11 @@ section.reef .layer {
   text-transform: uppercase;
 }
 
+.schedule .meta .caption {
+  color: inherit;
+  /* Override .caption color to use .meta's color */
+}
+
 .schedule .meta-item::before {
   content: none !important;
   margin: 0;
@@ -1106,16 +1041,23 @@ section.reef .layer {
 }
 
 .timeline .time {
-  color: #a9c6d1;
-  font-size: 12px;
-  text-transform: uppercase;
   letter-spacing: .05em;
+  font-feature-settings: 'calt' off;
+  font-family: "IBM Plex Mono";
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 150%; /* 22.5px */
+  text-transform: uppercase;
 }
 
 .timeline .evt {
-  color: #f3fbfe;
-  font-size: 16px;
-  line-height: 1.6;
+  /* inherits font-family, font-weight, line-height, color from body */
+  font-size: 20px;
+  /* p font-size */
+}
+
+.timeline .evt.bold {
+  font-weight: bold;
 }
 
 .timeline .highlight .evt {
@@ -1212,14 +1154,20 @@ section.reef .layer {
 }
 
 .faq-grid {
-  display: grid;
+  display: flex;
   gap: 16px;
-  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-start;
+}
+
+.faq-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 800px) {
   .faq-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 }
 
@@ -1232,7 +1180,7 @@ section.reef .layer {
 .faq-grid summary {
   cursor: pointer;
   list-style: none;
-  font-size: 20px;
+  font-size: 24px;
   position: relative;
   padding-right: 52px;
   display: block;
@@ -1270,7 +1218,8 @@ section.reef .layer {
 .faq-grid details p {
   margin: 1rem 0 0;
   color: #c6dae2;
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .faq-grid a {
@@ -1358,23 +1307,24 @@ section.reef .layer {
 }
 
 .countdown strong {
-  font-size: 42px;
-  line-height: 1;
+  font-family: "IBM Plex Mono";
+  font-size: 63px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 69.3px */
 }
 
 .countdown span {
-  margin-top: 8px;
-  font-size: 13px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: rgba(234, 243, 246, .65);
+  color: var(--Cool-White, #E7F7FA);
 }
 
 .countdown .sep {
-  font-size: 40px;
-  line-height: 1;
-  color: rgba(234, 243, 246, .55);
-  margin-top: -10px;
+  color: var(--Cool-White, #E7F7FA);
+  font-family: "IBM Plex Mono";
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%; /* 60.5px */
 }
 
 @media (max-width: 640px) {
@@ -1606,7 +1556,7 @@ section.reef .layer {
         --h1-size: clamp(2rem, 8vw, 2.5rem);
         --h2-size: clamp(1.5rem, 6vw, 2rem);
         --p-size: clamp(0.95rem, 4vw, 1.15rem);
-        --caption-size: clamp(0.65rem, 3vw, 0.8rem);
+        --caption-size: clamp(0.65rem, 3vw, 0.8rem);  
         --footer-caption-size: clamp(0.65rem, 2vw, 0.75rem);
         
         /* Adjust spacing for mobile */
